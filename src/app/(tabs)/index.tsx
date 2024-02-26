@@ -1,4 +1,5 @@
 import {View, StyleSheet, Text} from "react-native";
+import { theme } from "@/app/theme";
 
 export default function Home(){
     return(
@@ -12,9 +13,12 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         justifyContent:'center',
-        alignItems:"center"
+        alignItems:"center",
+        backgroundColor: theme.colors.black
     },
     text:{
-        fontSize:22
+        fontSize:22,
+        color: theme.colors.white
+
     }
 })
