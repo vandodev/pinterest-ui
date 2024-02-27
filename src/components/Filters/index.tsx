@@ -1,19 +1,20 @@
 import { FlatList } from "react-native"
 
 import { styles } from "./styles"
-import {FILTERS} from "@/utils/filters"
 
 import { Filter } from "@/components/Filter"
+import { FilterProps } from "./filters"
 
-export function Filters() {
+export function Filters({filters, filter, onChange}:FilterProps) {
   return (
     <FlatList
-      data={FILTERS}
+      data={filters}
       keyExtractor={(item) => item}
       renderItem={({ item }) => (
         <Filter
           filter={item}
-          selected
+          selected={item === filter}
+          onPress={() => onChange(item)}
         />
       )}
       horizontal
