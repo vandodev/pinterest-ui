@@ -53,7 +53,7 @@ export default function TabLayout() {
                 options={{
                     tabBarIcon: ({ color }) => (
                     <Avatar
-                        selected
+                        selected={color === theme.colors.white}
                         source={{ uri: "https://github.com/vandodev.png" }}/>
                     ),
                 }}
