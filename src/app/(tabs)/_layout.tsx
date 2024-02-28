@@ -10,6 +10,9 @@ import { useRef } from "react"
 
 export default function TabLayout() {
     const bottomSheetRef = useRef<BottomSheet>(null)
+    const handleBottomSheetOpen = () => bottomSheetRef.current?.expand()
+    const handleBottomSheetClose = () => bottomSheetRef.current?.snapToIndex(0)
+
     return(
         <View style={{flex:1}}>
             <Tabs
@@ -53,8 +56,9 @@ export default function TabLayout() {
                 }}
                 listeners={() => ({
                     tabPress: (event) => {
-                    event.preventDefault()
-                      console.warn("Clicou em adicionar")                    
+                        event.preventDefault()
+                        //   console.warn("Clicou em adicionar") 
+                        handleBottomSheetOpen()                   
                     },
                 })}
             />
@@ -81,7 +85,7 @@ export default function TabLayout() {
                 />
 
             </Tabs>
-            <Menu ref={bottomSheetRef}/>
+            <Menu ref={bottomSheetRef} onClose={handleBottomSheetClose}/>
         </View>
     )
 }
