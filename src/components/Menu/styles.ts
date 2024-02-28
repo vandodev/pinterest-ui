@@ -3,12 +3,15 @@ import { StyleSheet } from "react-native"
 
 export const styles = StyleSheet.create({
   container: {
-   
+    backgroundColor: theme.colors.gray[800],
   },
   content: {
-    height: 300,
-    width:"100%",
-    backgroundColor: "white"
+    flex: 1,
+    padding: 24,
+    alignItems: "center",
+  },
+  header: {
+    flexDirection: "row",
   },
   title: {
     fontSize: 18,
