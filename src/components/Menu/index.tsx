@@ -1,11 +1,13 @@
 import { Text, View } from "react-native"
 import BottomSheet from "@gorhom/bottom-sheet"
+import { forwardRef } from "react"
 
 import { styles } from "./styles"
 
-export function Menu(){
+export const Menu = forwardRef<BottomSheet>(({}, ref) => {
   return (
     <BottomSheet 
+      ref={ref}
       index={0} 
       snapPoints={[0.01,230]}
       // snapPoints={[100,230]}
@@ -17,4 +19,4 @@ export function Menu(){
       </View>
     </BottomSheet>
   )
-}
+})

@@ -4,9 +4,12 @@ import { theme } from "@/theme"
 import { Avatar } from "@/components/Avatar"
 import { Menu } from "@/components/Menu"
 import { View } from "react-native"
+import BottomSheet from "@gorhom/bottom-sheet"
+import { useRef } from "react"
 
 
 export default function TabLayout() {
+    const bottomSheetRef = useRef<BottomSheet>(null)
     return(
         <View style={{flex:1}}>
             <Tabs
@@ -78,7 +81,7 @@ export default function TabLayout() {
                 />
 
             </Tabs>
-            <Menu />
+            <Menu ref={bottomSheetRef}/>
         </View>
     )
 }
